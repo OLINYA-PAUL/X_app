@@ -42,6 +42,8 @@ if (process.env.NODE_ENV === "production") {
 	});
 }
 
+app.use("/", (req, res) => res.status(200).json({message:"welcomed"}))
+
 app.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}`);
 	connectMongoDB();
