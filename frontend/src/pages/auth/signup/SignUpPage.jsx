@@ -11,7 +11,6 @@ import { FaUser } from "react-icons/fa";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 
-
 const SignUpPage = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -33,7 +32,7 @@ const SignUpPage = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ email, username, fullName, password }),
-          credentials: true,
+          credentials: "include",
         });
 
         const data = await res.json();
@@ -306,4 +305,3 @@ const SignUpPage = () => {
 };
 
 export default SignUpPage;
-
